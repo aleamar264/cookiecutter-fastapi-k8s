@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{cookiecutter.project.lower()}}-deployment
+  namespace: "{{cookiecutter.project.lower()}}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{cookiecutter.project.lower()}}
+  template:
+    metadata:
+      labels:
+        app: {{cookiecutter.project.lower()}}
+    spec:
+      containers:
+        - name: {{cookiecutter.project.lower()}}
+          # image: docker.io/library/cognito:latest
+          # imagePullPolicy: Never
+          image: 905418491566.dkr.ecr.us-east-2.amazonaws.com/cognito-idp:latest
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "900m"
+          ports:
+            - name: http
+              containerPort: {{cookiecutter.port}}
+          readinessProbe:
+            httpGet:
+              port: {{cookiecutter.port}}
+              path: /{{cookiecutter.project.lower()}}/docs
+            initialDelaySeconds: 15
+          livenessProbe:
+            httpGet:
+              port: {{cookiecutter.port}}
+              path: /{{cookiecutter.project.lower()}}/docs
+            initialDelaySeconds: 15
+            periodSeconds: 15
