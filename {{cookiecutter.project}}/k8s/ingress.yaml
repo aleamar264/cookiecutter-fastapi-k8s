@@ -29,7 +29,7 @@ spec:
             path: "/{{cookiecutter.project.lower()}}"
             backend:
               service:
-                name: skillview-service
+                name: {{cookiecutter.project}}-service
                 port:
                   number: 8000
 {% if cookiecutter.tls %}
