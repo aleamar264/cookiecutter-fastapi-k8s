@@ -13,7 +13,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     version="0.0.1",
-    root_path="/{{cookiecutter.project_name}}".lower(),
+    root_path="/{{cookiecutter.project}}".lower(),
 )
 
 app.add_middleware(

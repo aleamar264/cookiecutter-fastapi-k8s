@@ -1,5 +1,5 @@
 [project]
-name = "cookiecutter-fastapi {{cookiecutter.project_name}}"
+name = "cookiecutter-fastapi {{cookiecutter.project}}"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -52,7 +52,7 @@ include = ["src/*", "tests/*"]
 
 
 [tool.coverage.html]
-title = "{{cookiecutter.project_name}} Coverage"
+title = "{{cookiecutter.project}} Coverage"
 directory = "tests/coverage/report-html"
 
 [tool.coverage.xml]

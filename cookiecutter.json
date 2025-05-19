@@ -1,5 +1,5 @@
 {
-    "project_name": "My App",
+    "project": "My App",
     "python_version": 3.13,
     "author": "Alejandro Amar",
     "tls": false,
