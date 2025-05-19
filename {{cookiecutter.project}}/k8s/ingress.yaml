@@ -22,7 +22,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: {{% if cookiecutter.tls %}}api.dev.keewel.co{{% else %}}localhost{{% endif %}}
+    - host: {{cookiecutter.domain}}
       http:
         paths:
           - pathType: Prefix
@@ -35,6 +35,6 @@ spec:
 {{% if cookiecutter.tls %}}
   tls:
     - hosts:
-        - api.dev.keewel.co
-      secretName: api-dev-keewel-co
+        - {{cookiecutter.domain}}
+      secretName: {{cookiecutter.domain}}
 {{% endif %}}
