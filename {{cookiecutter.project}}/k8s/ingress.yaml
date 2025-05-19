@@ -32,9 +32,9 @@ spec:
                 name: skillview-service
                 port:
                   number: 8000
-{{% if cookiecutter.tls %}}
+{% if cookiecutter.tls %}
   tls:
     - hosts:
         - {{cookiecutter.domain}}
       secretName: {{cookiecutter.domain}}
-{{% endif %}}
+  {% endif %}
