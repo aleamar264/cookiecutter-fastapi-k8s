@@ -18,7 +18,7 @@ spec:
         - name: {{cookiecutter.project.lower()}}
           # image: docker.io/library/cognito:latest
           # imagePullPolicy: Never
-          image: 905418491566.dkr.ecr.us-east-2.amazonaws.com/cognito-idp:latest
+          image: docker-image
           imagePullPolicy: Always
           resources:
             limits:
